@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operations with LocalStorage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body class="bg-dark">
+    <section class="">
+      <div class="container text-dark">
+        <label for="record">Record</label>
+        <div class="d-flex gap-3">
+          <input
+            class="form-control form-control-lg"
+            id="record"
+            type="text"
+            placeholder="First Name"
+            aria-label=".form-control-lg example"
+          />
+          <input
+            class="form-control form-control-lg"
+            id="lName"
+            type="text"
+            placeholder="Last Name"
+            aria-label=".form-control-lg example"
+          />
+        </div>
+        <input
+          class="form-control mt-2 form-control-lg"
+          id="myInput"
+          type="text"
+          placeholder="SearchBar"
+          onkeyup="searchFunc()"
+          aria-label=".form-control-lg example"
+        />
+
+        <div class="mt-2 gap-2 d-flex">
+          <input
+            class="form-control mt-2 form-control"
+            id="startDate"
+            type="date"
+            value="2024-01-01"
+            onchange="dateFilter()"
+            aria-label=".form-control example"
+          />
+          <input
+            class="form-control mt-2 form-control"
+            id="endDate"
+            type="date"
+            value="2026-01-01"
+            onchange="dateFilter()"
+            aria-label=".form-control example"
+          />
+        </div>
+
+        <table
+          class="table table-sortable table-primary border table-stripped table-hover my-5"
+          id="table"
+          style="cursor: pointer"
+        >
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Time</th>
+              <th scope="col">Date</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr></tr>
+          </tbody>
+        </table>
+        <div class="d-flex">
+          <button
+            type="button"
+            onclick="addRow()"
+            class="btn btn-primary mx-auto"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
